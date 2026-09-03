@@ -11,10 +11,10 @@ DATE_PATTERNS = [
 # symbol/code or a "Total/Subtotal/Amount" label - otherwise plain
 # digit sequences (phone numbers, invoice numbers) get misread as amounts.
 AMOUNT_PATTERN = (
-    r'(?:(?:USD|EGP|\$|€|£)\s?(\d{1,3}(?:,\d{3})*(?:\.\d{2})?))'
+    r'(?:(?:USD|EGP|\$|€|£)\s?(\d{1,3}(?:,\d{3})*(?:\.\d{2})?|\d{4,}(?:\.\d{2})?))'
     r'|'
     r'(?:(?:Total|Subtotal|Amount|Sum)\s*:?\s*(?:USD|EGP|\$|€|£)?\s*'
-    r'(\d{1,3}(?:,\d{3})*(?:\.\d{2})?))'
+    r'(\d{1,3}(?:,\d{3})*(?:\.\d{2})?|\d{4,}(?:\.\d{2})?))'
 )
 
 EMAIL_PATTERN = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
