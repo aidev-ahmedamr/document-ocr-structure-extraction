@@ -216,3 +216,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Project-specific
+data/uploads/*
+data/output/*
+!data/samples/.gitkeep
+*.pdf
+models_cache/
