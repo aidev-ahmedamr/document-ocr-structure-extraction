@@ -1,0 +1,24 @@
+# Preprocessing
+numpy
+Pillow
+pdf2image
+
+# Traditional OCR
+pytesseract
+
+# Vision-LLM pipeline
+torch
+transformers
+accelerate
+qwen-vl-utils
+
+# API + Dashboard
+fastapi
+uvicorn
+python-multipart
+streamlit
+requests
+pandas
+
+# Testing
+pytest
