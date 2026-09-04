@@ -7,9 +7,6 @@ DATE_PATTERNS = [
     r'\b([A-Z][a-z]{2,8}\s+\d{1,2},?\s+\d{4})\b',
 ]
 
-# Only treat a number as a monetary amount if it's tied to a currency
-# symbol/code or a "Total/Subtotal/Amount" label - otherwise plain
-# digit sequences (phone numbers, invoice numbers) get misread as amounts.
 AMOUNT_PATTERN = (
     r'(?:(?:USD|EGP|\$|€|£)\s?(\d{1,3}(?:,\d{3})*(?:\.\d{2})?|\d{4,}(?:\.\d{2})?))'
     r'|'
