@@ -21,10 +21,20 @@ _model = None
 _processor = None
 
 PROMPT = """You are a document-understanding assistant. Look at this
-document image and extract the following fields as JSON, using empty
-lists/strings when a field is not present. Return ONLY valid JSON, no
-extra text, no markdown fences.
+document image and extract information as a single JSON object with
+exactly these keys:
 
+- document_type: one of "invoice", "receipt", "id_card", "form", "contract", "other"
+- dates: a list of every date string visible on the document
+- amounts: a list of every monetary amount visible on the document, as numbers (e.g. 95.5) - read the exact value shown, never invent or default to 0
+- emails: a list of every email address visible
+- phones: a list of every phone number visible
+- document_ids: a list of every invoice/reference/ID number visible
+- summary: one sentence describing what this document is
+
+Use an empty list [] for any field with nothing visible on the document - never guess or leave placeholder values.
+Return ONLY the JSON object. No markdown code fences, no extra text before or after it.
+"""
 {
   "document_type": "invoice | receipt | id_card | form | contract | other",
   "dates": ["..."],
