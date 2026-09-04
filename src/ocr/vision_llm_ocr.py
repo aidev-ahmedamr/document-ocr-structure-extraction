@@ -35,21 +35,11 @@ exactly these keys:
 Use an empty list [] for any field with nothing visible on the document - never guess or leave placeholder values.
 Return ONLY the JSON object. No markdown code fences, no extra text before or after it.
 """
-{
-  "document_type": "invoice | receipt | id_card | form | contract | other",
-  "dates": ["..."],
-  "amounts": [0.0],
-  "emails": ["..."],
-  "phones": ["..."],
-  "document_ids": ["..."],
-  "summary": "one sentence describing what this document is"
-}
-"""
 
 
 def load_model():
-    """Load the model once and cache it (loading takes ~10-20s on a
-    Colab GPU, so we don't want to repeat it per document)."""
+    """Load the model once and cache it (loading takes 10-20 seconds
+    on a Colab GPU, so we do not want to repeat it per document)."""
 
     global _model, _processor
 
